@@ -15,6 +15,9 @@ const bootcamps = require("./routes/bootcamp");
 
 const app = express();
 
+//body parser
+app.use(express.json());
+
 if (process.env.NODE_ENV === "development") app.use(morgan("common"));
 //Mount routers
 app.use("/api/v1/bootcamps", bootcamps);
